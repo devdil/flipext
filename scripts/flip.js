@@ -1,7 +1,16 @@
+/*
+    @author: Diljit PR
+    @date: 15/09/1992
+    @description: flip.js contains the main logic to flip around the characters entered by user.
+    It relies on an mapping between english characters and its mirrored versions which are stored as unicode points.
+    For lookup, its basically a dictionary. happy O(1).
+*/
+
 define(["jquery"], function($) {
 
     var sourceTextArea = "#sourceTextArea";
     var destinationTextArea = "#outputText";
+    var mirrorErrorMessage = "Mirroring does not work for these characters";
     var flippedCharactersInUnicode = {
         "a": "\u0250",
         "b": "\u0071",
@@ -71,7 +80,7 @@ define(["jquery"], function($) {
             sourceTextLength = sourceText.length;
             for (index = 0; index < sourceTextLength; index++) {
                 character = sourceText[index];
-                invertedText += flippedCharactersInUnicode[character];
+                invertedText += (flippedCharactersInUnicode[character]) ? (flippedCharactersInUnicode[character]) : character ;
             }
             displayInvertedText(invertedText);
         } else
