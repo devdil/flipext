@@ -1,6 +1,6 @@
 /*
     @author: Diljit PR
-    @date: 15/09/1992
+    @date: 15/09/2016
     @description: flip.js contains the main logic to flip around the characters entered by user.
     It relies on an mapping between english characters and its mirrored versions which are stored as unicode points.
     For lookup, its basically a dictionary. happy O(1).
